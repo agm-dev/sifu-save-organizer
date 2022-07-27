@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>SIFU Save Organizer</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'"> <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'">
+  </head>
+  <body>
+    <h1>SIFU Save Organizer</h1>
+    We are using Node.js <span id="node-version"></span>, Chromium
+    <span id="chrome-version"></span>, and Electron
+    <span id="electron-version"></span>.
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./dist/renderer.js"></script>
+    <script>var exports = {"__esModule": true};</script>
+    <script src="./dist/core/app.js"></script>
+
+    <div>
+      <label for="saveOriginFile">select the save file of your SIFU installation:</label>
+      <input id="saveOriginFile" type="file">
+    </div>
+    <div>
+      <label for="saveOriginFilePath">origin save file:</label>
+      <input id="saveOriginFilePath" type="text" readonly>
+    </div>
+    <div>
+      <button id="createBackupButton">Create backup</button>
+      <button id="restoreBackupButton">Restore backup</button>
+    </div>
+  </body>
+</html>
